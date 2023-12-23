@@ -2,7 +2,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:localisation_app/language_cache_helper.dart';
-import 'package:meta/meta.dart';
 
 part 'local_state.dart';
 

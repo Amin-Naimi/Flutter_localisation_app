@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:localisation_app/cubit/local_cubit.dart';
 import 'app_localizations.dart';
+import 'cubit/local_cubit.dart';
 import 'home_page.dart';
 
 void main() => runApp(const MyApp());
