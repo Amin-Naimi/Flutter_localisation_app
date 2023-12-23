@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       supportedLocales: const [
         Locale('en', 'US'),
-        Locale('ar', ''),
+        Locale('ar'),
       ],
       localizationsDelegates: const [
         // Direction des widgets

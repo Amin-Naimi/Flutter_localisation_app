@@ -13,6 +13,9 @@ dependencies:
 
   flutter_localizations:
     sdk: flutter
+  flutter_bloc: ^8.1.1
+  # To save the langage 
+  shared_preferences: ^2.0.15
 
   cupertino_icons: ^1.0.2
 

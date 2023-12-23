@@ -12,8 +12,7 @@ class AppLocalizations{
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }// this code tell flutter that : the class AppLocalizations is responsible for the localizations in the app
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   late Map<String, String> _localizedStrings;
 
@@ -32,9 +31,10 @@ class AppLocalizations{
   String translate(String key) => _localizedStrings[key] ?? "";
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+ 
   const _AppLocalizationsDelegate();
+
   @override
   bool isSupported(Locale locale) {
     return ['en', 'ar'].contains(locale.languageCode);
