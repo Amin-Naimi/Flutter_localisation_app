@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'app_localizations.dart';
 import 'home_page.dart';
 
 void main() => runApp(const MyApp());
@@ -9,18 +10,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Material App',
-      supportedLocales: [
+      supportedLocales: const [
         Locale('en', 'US'),
         Locale('ar', ''),
       ],
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate
+      localizationsDelegates: const [
+        // Direction des widgets
+        GlobalMaterialLocalizations
+            .delegate, // Translate some Text in specific widget
+        GlobalWidgetsLocalizations.delegate, // Widgets direction left , right
+        GlobalCupertinoLocalizations
+            .delegate, // Translate some Text in specific widget
+            AppLocalizations.delegate
       ],
-      home: HomePage(),
+      localeResolutionCallback: (deviceLocaleLangage, supportedLocales) {
+        for(var locale in supportedLocales) {
+          if(deviceLocaleLangage !=null && deviceLocaleLangage.languageCode == locale.languageCode){
+              return deviceLocaleLangage;
+          }
+        }
+        return supportedLocales.first;
+      },
+      home: const HomePage(),
     );
   }
 }

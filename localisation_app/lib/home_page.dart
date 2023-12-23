@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'app_localizations.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -8,18 +10,22 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       drawer: const Drawer(),
-      body: const Center(
+      body:  Center(
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
-                "Hello Bro !",
-                style: TextStyle(fontSize: 25),
+/********************************************************************************************/ 
+               AppLocalizations.of(context)!.translate("hello_msg"),
+               //ou
+               //"hello_msg".translate(context),
+/********************************************************************************************/               
+                style: const TextStyle(fontSize: 25),
                 textAlign: TextAlign.center,
               ),
-              Text(
+              const Text(
                 "This text will not be translated !",
                 style: TextStyle(fontSize: 25),
                 textAlign: TextAlign.center,
